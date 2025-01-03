@@ -176,7 +176,6 @@ class _PieTimerState extends State<PieTimer>
   void _stopAnim() {
     if (_controller.isAnimating) {
       _controller.stop();
-      _toggleOpacity(1.0);
     }
   }
 
@@ -237,30 +236,6 @@ class _PieTimerState extends State<PieTimer>
                   borderColor: widget.borderColor,
                   borderWidth: widget.borderWidth,
                 ),
-              ),
-            ),
-          ),
-          AnimatedOpacity(
-            opacity: _opacityVal,
-            duration: const Duration(milliseconds: 300),
-            child: Container(
-              width: widget.radius * 2,
-              height: widget.radius * 2,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.black.withOpacity(0.5),
-              ),
-              child: Icon(
-                Icons.pause_circle_outline,
-                color: Colors.white,
-                size: widget.radius,
-                shadows: const [
-                  BoxShadow(
-                    color: Colors.black,
-                    blurRadius: 10.0,
-                    spreadRadius: 5.0,
-                  )
-                ],
               ),
             ),
           ),
